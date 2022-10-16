@@ -8,11 +8,11 @@
         Title="zad4" Height="450" Width="800">
     <Grid>
         <Canvas>
-            <Button Margin="20" Canvas.Left="100" Canvas.Top="10" Height="50" Width="300" Background="White" Content="1"></Button>
-            <Button Margin="20" Canvas.Left="405" Canvas.Top="10" Height="50" Width="300" Background="White" Content="1"></Button>
-            <Button Margin="20" Canvas.Left="150" Canvas.Top="65" Height="50" Width="250" Background ="LightBlue" Content="2"></Button>
-            <Button Margin="20" Canvas.Left="405" Canvas.Top="65" Height="50" Width="250" Background="LightBlue" Content="2"></Button>
-            <Button Margin="20" Canvas.Left="300" Canvas.Top="120" Height="50" Width="200" Background="Gray" Content="3"></Button>
+            <Button  Canvas.Left="100" Canvas.Top="10" Height="50" Width="300" Background="White" Content="1"/>
+            <Button  Canvas.Left="405" Canvas.Top="10" Height="50" Width="300" Background="White" Content="1"/>
+            <Button  Canvas.Left="150" Canvas.Top="65" Height="50" Width="250" Background ="LightBlue" Content="2"/>
+            <Button  Canvas.Left="405" Canvas.Top="65" Height="50" Width="250" Background="LightBlue" Content="2"/>
+            <Button  Canvas.Left="300" Canvas.Top="120" Height="50" Width="200" Background="Gray" Content="3"/>
         </Canvas>
     </Grid>
 </Window>

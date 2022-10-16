@@ -7,27 +7,26 @@
         mc:Ignorable="d"
         Title="zad2" Height="300" Width="350">
     <Grid>
-        <Label Margin="20, 10, 0, 0">Dodawanie studenta do bazy danych</Label>
-        <StackPanel Margin="20, 40, 0, 0">
+        <StackPanel >
             <StackPanel Orientation="Horizontal">
-                <Label Height="25" Width="100" Content="Imię:"></Label>
+                <Label Height="25" Width="100" Content="Imię:"/>
+                <TextBox Height="25" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Height="25" Width="100" Content="Nazwisko:"/>
                 <TextBox Height="25" Width="150" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Height="25" Width="100" Content="Nazwisko:"></Label>
+                <Label Height="25" Width="100" Content="Data urodzin:"/>
                 <TextBox Height="25" Width="150" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Height="25" Width="100" Content="Data urodzin:"></Label>
-                <TextBox Height="25" Width="150" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Height="25" Width="100" Content="Semestr:"></Label>
+                <Label Height="25" Width="100" Content="Semestr:"/>
                 <TextBox Height="25" Width="150" />
             </StackPanel>
 
-            <Button Margin="20, 20, 0, 0" Width = "150" Height = "25">Dodaj</Button>
-            
+            <Button Width = "150" Height = "25" Content="Dodaj"/>
+
         </StackPanel>
     </Grid>
 </Window>
