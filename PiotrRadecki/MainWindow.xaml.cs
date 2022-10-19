@@ -15,11 +15,30 @@ using System.Windows.Shapes;
 
 namespace PiotrRadecki
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        enum Operation
+        {
+            none = 0,
+            add,
+            sub,
+            mult,
+            div,
+            result
+        }
+
+        private Operation m_eLastOperationSelected = Operation.none;
+        private void NumberButton_Click(object oSender, RoutedEventArgs eRoutedEventArgs)
+        {
+            if (Operation.result == m_eLastOperationSelected)
+            {
+                txtDisplay.Text = string.Empty;
+                m_eLastOperationSelected = Operation.none;
+            }
+            Button oButton = (Button)oSender;
+            txtDisplay.Text += oButton.Content;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
