@@ -3,11 +3,11 @@
 namespace PiotrRadecki
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logika interakcji dla klasy zad4.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class zad4 : Window
     {
-        public MainWindow()
+        public zad4()
         {
             InitializeComponent();
         }
