@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:ProjektKolkoiKrzyzyk"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Window.Resources>
+        <local:StringToBoolConverter x:Key="StrToBool" />
+    </Window.Resources>
+    <Grid x:Name="ctlGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
@@ -17,14 +20,14 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Button x:Name="Button_0_0" Grid.Row="0" Grid.Column="0" Click="Button_Click" />
-        <Button x:Name="Button_0_1" Grid.Row="0" Grid.Column="1" Click="Button_Click" />
-        <Button x:Name="Button_0_2" Grid.Row="0" Grid.Column="2" Click="Button_Click" />
-        <Button x:Name="Button_1_0" Grid.Row="1" Grid.Column="0" Click="Button_Click" />
-        <Button x:Name="Button_1_1" Grid.Row="1" Grid.Column="1" Click="Button_Click" />
-        <Button x:Name="Button_1_2" Grid.Row="1" Grid.Column="2" Click="Button_Click" />
-        <Button x:Name="Button_2_0" Grid.Row="2" Grid.Column="0" Click="Button_Click" />
-        <Button x:Name="Button_2_1" Grid.Row="2" Grid.Column="1" Click="Button_Click" />
-        <Button x:Name="Button_2_2" Grid.Row="2" Grid.Column="2" Click="Button_Click" />
+        <Button Content="{Binding tab[0]}" Click="Button_Click" Tag="0" IsEnabled="{Binding tab[0], Converter={StaticResource StrToBool}}" FontSize="30"/>
+        <Button Grid.Column="1" Content="{Binding tab[1]}" Click="Button_Click" Tag="1" IsEnabled="{Binding tab[1], Converter={StaticResource StrToBool}}" FontSize="30"/>
+        <Button Grid.Column="2" Content="{Binding tab[2]}" Click="Button_Click" Tag="2" IsEnabled="{Binding tab[2], Converter={StaticResource StrToBool}}" FontSize="30"/>
+        <Button Grid.Row="1" Content="{Binding tab[3]}" Click="Button_Click" Tag="3" IsEnabled="{Binding tab[3], Converter={StaticResource StrToBool}}" FontSize="30"/>
+        <Button Grid.Row="1" Grid.Column="1" Content="{Binding tab[4]}" Click="Button_Click" Tag="4" IsEnabled="{Binding tab[4], Converter={StaticResource StrToBool}}" FontSize="30"/>
+        <Button Grid.Row="1" Grid.Column="2" Content="{Binding tab[5]}" Click="Button_Click" Tag="5" IsEnabled="{Binding tab[5], Converter={StaticResource StrToBool}}" FontSize="30"/>
+        <Button Grid.Row="2" Content="{Binding tab[6]}" Click="Button_Click" Tag="6" IsEnabled="{Binding tab[6], Converter={StaticResource StrToBool}}" FontSize="30"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="{Binding tab[7]}" Click="Button_Click" Tag="7" IsEnabled="{Binding tab[7], Converter={StaticResource StrToBool}}" FontSize="30"/>
+        <Button Grid.Row="2" Grid.Column="2" Content="{Binding tab[8]}" Click="Button_Click" Tag="8" IsEnabled="{Binding tab[8], Converter={StaticResource StrToBool}}" FontSize="30"/>
     </Grid>
 </Window>
