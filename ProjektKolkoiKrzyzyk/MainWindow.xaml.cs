@@ -23,9 +23,16 @@ namespace ProjektKolkoiKrzyzyk
             Button btn = (Button)sender;
             gra.tab[Convert.ToInt16(btn.Tag)] = User;
             if (User == "X")
+            {
                 User = "O";
+                gra.kroki++;
+            }
+
             else
+            {
                 User = "X";
+                gra.kroki++;
+            }
             gra.ValuateWinCndition();
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
 
@@ -8,6 +9,7 @@ namespace ProjektKolkoiKrzyzyk
     {
         private ObservableCollection<string> _tab;
 
+        public int kroki = 0;
         public ObservableCollection<string> tab
         {
             get { return _tab; }
@@ -30,7 +32,6 @@ namespace ProjektKolkoiKrzyzyk
 
             }
         }
-
         public Game()
         {
             tab = new ObservableCollection<string>();
@@ -53,14 +54,24 @@ namespace ProjektKolkoiKrzyzyk
                         if (tab[i] != "")
                             this.EndGame(tab[i]);
                     }
-
                 }
                 if ((tab[0] == tab[4] && tab[4] == tab[8]) || (tab[2] == tab[4] && tab[4] == tab[6]))
                 {
                     if (tab[4] != "")
                         this.EndGame(tab[4]);
                 }
-
+                if (kroki >= 9)
+                {
+                    Restart();
+                }
+            }
+        }
+        public void Restart()
+        {
+            MessageBox.Show("Restart");
+            for (int i = 0; i < 9; i++)
+            {
+                tab[i] = "";
             }
         }
         private void EndGame(string a)
@@ -70,7 +81,6 @@ namespace ProjektKolkoiKrzyzyk
             {
                 tab[i] = "";
             }
-
         }
     }
 }
