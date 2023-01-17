@@ -34,8 +34,8 @@ namespace Serializacja
                 listOfPersons.Add(new Person("Imie", "Nazwisko"));
                 listOfPersons.Add(new Person("Imie", "Nazwisko"));
                 listOfPersons.Add(new Person("Imie", "Nazwisko"));
-                dataGridPerson.ItemsSource = listOfPersons;
             }
+            dataGridPerson.ItemsSource = listOfPersons;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
