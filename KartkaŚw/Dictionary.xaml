@@ -1,4 +1,54 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+
+
+    <Style TargetType="Rectangle" x:Key="GiftClose">
+        <Setter Property="Fill" Value="DarkRed" />
+        <Setter Property="Width" Value="10" />
+        <Setter Property="Height" Value="100" />
+    </Style>
+
+    <Style TargetType="Rectangle" x:Key="Gift1">
+        <Setter Property="Fill" Value="Yellow" />
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="100" />
+    </Style>
+
+    <Style TargetType="Rectangle" x:Key="Gift2">
+        <Setter Property="Fill" Value="Orange" />
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="100" />
+    </Style>
+
+    <Style TargetType="Rectangle" x:Key="Gift3">
+        <Setter Property="Fill" Value="Blue" />
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="100" />
+    </Style>
+
+    <Style TargetType="Ellipse" x:Key="Bauble">
+        <Setter Property="Fill" Value="Blue" />
+        <Setter Property="Width" Value="50" />
+        <Setter Property="Height" Value="50" />
+        <Setter Property="Stroke" Value="Black" />
+        <Setter Property="StrokeThickness" Value="4" />
+    </Style>
+
+    <Style TargetType="Rectangle" x:Key="Trunk">
+        <Setter Property="Fill" Value="Brown" />
+        <Setter Property="Width" Value="50" />
+        <Setter Property="Height" Value="100" />
+    </Style>
+
+    <Style TargetType="Path" x:Key="Star">
+        <Setter Property="Fill" Value="Gold" />
+        <Setter Property="StrokeThickness" Value=".5" />
+    </Style>
+
+    <Style TargetType="Path" x:Key="Tree">
+        <Setter Property="StrokeThickness" Value="30" />
+        <Setter Property="StrokeLineJoin" Value="Round" />
+        <Setter Property="Stroke" Value="Green" />
+        <Setter Property="Fill" Value="Green" />
+    </Style>
 </ResourceDictionary>
