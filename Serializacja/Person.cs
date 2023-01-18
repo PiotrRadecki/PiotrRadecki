@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace Serializacja
 {
@@ -24,7 +19,6 @@ namespace Serializacja
             this.Imie = Imie;
             this.Nazwisko = Nazwisko;
         }
-
         public Person(Person osoba)
         {
             this.Imie = osoba.Imie;
