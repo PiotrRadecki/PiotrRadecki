@@ -6,11 +6,94 @@
         xmlns:local="clr-namespace:Shelter"
         mc:Ignorable="d"
         Title="Shelter"
-        Height="650"
-        Width="800"
+        Height="750"
+        Width="900"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="None">
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    
     <Grid>
 
+        <Grid Margin="20" Background="#1C2F3E">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="30"
+                                  ShadowDepth="2"
+                                  Direction="-90"
+                                  Color="Gray">
+                </DropShadowEffect>
+            </Grid.Effect>
+
+            <StackPanel Width="100"
+                        HorizontalAlignment="Left"
+                        Background="#14212B">
+
+                <Button x:Name="Home"
+                        Height="100"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Margin="0,180,0,20">
+
+                    <Image Source="Assets/icon-home.png"
+                           Stretch="None">
+                    </Image>
+
+                </Button>
+
+                <Button x:Name="Cats"
+                        Height="100"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Margin="0,0,0,10">
+
+                    <Image Source="Assets/icon-cat.png"
+                           Stretch="None">
+                    </Image>
+
+                </Button>
+
+                <Button x:Name="Dogs"
+                        Height="100"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Margin="0,10,0,0">
+
+                    <Image Source="Assets/icon-dog.png"
+                           Stretch="None">
+                    </Image>
+                </Button>
+            </StackPanel>
+            
+            <Grid Height="80"
+                  VerticalAlignment="Top"
+                  Background="#233C4F">
+
+                <TextBlock Text="Schronisko, dane zwierzaków"
+                           FontFamily="open sans condensed"
+                           FontSize="26"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="#E0FFFF">
+                </TextBlock>
+                
+                <Button Height="40"
+                        Width="40"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,20,0" Click="Button_Click">
+
+                    <Image Source="Assets/icon-close.png"
+                           Stretch="None">
+                    </Image>
+                </Button>
+            </Grid>
+
+            <Grid Height="80"
+                  VerticalAlignment="Bottom"
+                  Background="#233C4F">
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

@@ -7,4 +7,26 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\icon-cat.png" />
+    <None Remove="Assets\icon-close.png" />
+    <None Remove="Assets\icon-dog.png" />
+    <None Remove="Assets\icon-home.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\icon-cat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\icon-close.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\icon-dog.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\icon-home.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
