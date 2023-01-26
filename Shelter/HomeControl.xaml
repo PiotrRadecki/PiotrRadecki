@@ -7,6 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="This is the home page" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <Image Source="Assets/dog1.jpg"
+                           Stretch="Fill" Margin="339,182,78,42">
+        </Image>
+        <Image Source="Assets/cat1.jpg"
+                           Stretch="Fill" Margin="69,44,400,225">
+        </Image>
     </Grid>
 </UserControl>

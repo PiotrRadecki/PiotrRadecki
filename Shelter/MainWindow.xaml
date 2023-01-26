@@ -91,9 +91,9 @@
             </Grid>
 
             <Grid x:Name="GridContainer" Margin="100,85,0,80">
-                <local:HomeControl></local:HomeControl>
-                <local:CatsControl Visibility="Collapsed"></local:CatsControl>
-                <local:DogsControl Visibility="Collapsed"></local:DogsControl>
+                <local:HomeControl x:Name="home"></local:HomeControl>
+                <local:CatsControl Visibility="Collapsed" x:Name="cats"></local:CatsControl>
+                <local:DogsControl Visibility="Collapsed" x:Name="dogs"></local:DogsControl>
 
             </Grid>
             
