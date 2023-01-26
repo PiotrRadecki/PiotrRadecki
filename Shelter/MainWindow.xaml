@@ -24,28 +24,6 @@
                 </DropShadowEffect>
             </Grid.Effect>
 
-            <Grid HorizontalAlignment="Center" 
-                  Width="350"
-                  Height="250"
-                  Margin="400,250,0,0">
-
-                <Image Source="Assets/dog1.jpg"
-                           Stretch="Fill">
-                </Image>
-
-            </Grid>
-
-            <Grid HorizontalAlignment="Center" 
-                  Width="350"
-                  Height="250"
-                  Margin="0,0,200,200">
-
-                <Image Source="Assets/cat1.jpg"
-                           Stretch="Fill">
-                </Image>
-
-            </Grid>
-
             <StackPanel Width="100"
                         HorizontalAlignment="Left"
                         Background="#14212B">
@@ -54,7 +32,7 @@
                         Height="100"
                         Background="Transparent"
                         BorderBrush="Transparent"
-                        Margin="0,180,0,20">
+                        Margin="0,180,0,20" Click="Button_Click_Home">
 
                     <Image Source="Assets/icon-home.png"
                            Stretch="None">
@@ -112,6 +90,13 @@
                 </Button>
             </Grid>
 
+            <Grid x:Name="GridContainer" Margin="100,85,0,80">
+                <local:HomeControl></local:HomeControl>
+                <local:CatsControl Visibility="Collapsed"></local:CatsControl>
+                <local:DogsControl Visibility="Collapsed"></local:DogsControl>
+
+            </Grid>
+            
             <Grid Height="80"
                   VerticalAlignment="Bottom"
                   Background="#233C4F">

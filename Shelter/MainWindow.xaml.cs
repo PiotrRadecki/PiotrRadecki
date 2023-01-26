@@ -25,6 +25,10 @@ namespace Shelter
             InitializeComponent();
         }
 
+        private void Button_Click_Home(object sender, RoutedEventArgs e)
+        {
+            SetActiveUserControl(Home);
+        }
         private void Button_Click_Close(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -41,6 +45,15 @@ namespace Shelter
             WindowDogs windogs = new WindowDogs();
             windogs.Show();
             this.Close();
+        }
+
+        public void SetActiveUserControl(UserControl control)
+        {
+            Home.Visibility = Visibility.Collapsed;
+            Cats.Visibility = Visibility.Collapsed;
+            Dogs.Visibility = Visibility.Collapsed;
+
+            control.Visibility = Visibility.Visible;
         }
     }
 }
