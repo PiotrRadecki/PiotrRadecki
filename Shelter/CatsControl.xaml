@@ -7,6 +7,29 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="This is the cats page" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="179*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="50 50 0 0" Foreground="#E0FFFF" FontSize="20" Grid.RowSpan="2"/>
+        <Label Content="Bred:" HorizontalAlignment="Left" Margin="50,8,0,0" Foreground="#E0FFFF" FontSize="20" Grid.Row="1"/>
+        <Label Content="Dominate color:" HorizontalAlignment="Left" Margin="50,108,0,0" Foreground="#E0FFFF" FontSize="20" Grid.Row="1"/>
+        <Label Content="Size:" HorizontalAlignment="Left" Margin="50,158,0,0" Foreground="#E0FFFF" FontSize="20" Grid.Row="1"/>
+        <Label Content="ID:" HorizontalAlignment="Left" Margin="16,231,0,-73" Foreground="#E0FFFF" FontSize="20" Grid.Row="1"/>
+
+        <TextBox x:Name="catName_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,50,0,17" TextWrapping="Wrap"/>
+        <TextBox x:Name="catBreed_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,75,0,350" TextWrapping="Wrap" Grid.RowSpan="2"/>
+        <TextBox x:Name="catDominateColor_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,70,0,262" TextWrapping="Wrap" Grid.Row="1"/>
+        <TextBox x:Name="catSize_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,133,0,200" TextWrapping="Wrap" Grid.Row="1"/>
+        <TextBox x:Name="catSearch_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="117,208,0,125" TextWrapping="Wrap" Grid.Row="1"/>
+
+        <DataGrid x:Name="catDatagrid" HorizontalAlignment="Right" Height="250" VerticalAlignment="Top" Width="298" Margin="0,50,50,0" Grid.RowSpan="2"/>
+
+        <Button x:Name="catInsertBtn" Content="Insert record" Height="50" Width="100" VerticalAlignment="Bottom" Margin="0 0 150 50" FontSize="10" Grid.Row="1" Click="catInsertBtn_Click"/>
+        <Button x:Name="catUpdateBtn" Content="Update record" Height="50" Width="100" VerticalAlignment="Bottom" Margin="600 0 0 50" FontSize="10" Grid.Row="1" Click="catUpdateBtn_Click"/>
+        <Button x:Name="catDeleteBtn" Content="Delete record" Height="50" Width="100" VerticalAlignment="Bottom" Margin="350 0 0 50" FontSize="10" Grid.Row="1" Click="catDeleteBtn_Click"/>
+        <Button x:Name="catClearBtn" Content="Clear data" Height="50" Width="100" VerticalAlignment="Bottom" Margin="100 0 0 50" FontSize="10" Grid.Row="1" Click="catClearBtn_Click"/>
+
+
     </Grid>
 </UserControl>

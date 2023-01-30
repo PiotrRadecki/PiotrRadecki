@@ -7,6 +7,26 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="This is the dogs page" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="50 50 0 0" Foreground="#E0FFFF" FontSize="20"/>
+        <Label Content="Bred:" HorizontalAlignment="Left" Margin="50,100,0,0" Foreground="#E0FFFF" FontSize="20"/>
+        <Label Content="Dominate color:" HorizontalAlignment="Left" Margin="50,150,0,0" Foreground="#E0FFFF" FontSize="20"/>
+        <Label Content="Size:" HorizontalAlignment="Left" Margin="50,200,0,0" Foreground="#E0FFFF" FontSize="20"/>
+        <Label Content="ID:" HorizontalAlignment="Left" Margin="11,325,0,-75" Foreground="#E0FFFF" FontSize="20"/>
+
+        <TextBox x:Name="dogName_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,10,0,415" TextWrapping="Wrap"/>
+        <TextBox x:Name="dogBreed_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,50,0,375" TextWrapping="Wrap"/>
+        <TextBox x:Name="dogDominateColor_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,100,0,325" TextWrapping="Wrap"/>
+        <TextBox x:Name="dogSize_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,150,0,275" TextWrapping="Wrap"/>
+        <TextBox x:Name="dogSearch_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="117,275,0,150" TextWrapping="Wrap"/>
+
+        <DataGrid x:Name="dogDatagrid" HorizontalAlignment="Right" Height="250" VerticalAlignment="Top" Width="298" Margin="0,50,50,0"/>
+
+
+        <Button x:Name="dogInsertBtn" Content="Insert record" Height="50" Width="100" VerticalAlignment="Bottom" Margin="0 0 150 50" FontSize="10" Grid.Row="1" Click="dogInsertBtn_Click"/>
+        <Button x:Name="dogUpdateBtn" Content="Update record" Height="50" Width="100" VerticalAlignment="Bottom" Margin="600 0 0 50" FontSize="10" Grid.Row="1" Click="dogUpdateBtn_Click"/>
+        <Button x:Name="dogDeleteBtn" Content="Delete record" Height="50" Width="100" VerticalAlignment="Bottom" Margin="350 0 0 50" FontSize="10" Grid.Row="1" Click="dogDeleteBtn_Click"/>
+        <Button x:Name="dogClearBtn" Content="Clear data" Height="50" Width="100" VerticalAlignment="Bottom" Margin="100 0 0 50" FontSize="10" Grid.Row="1" Click="dogClearBtn_Click"/>
+
     </Grid>
 </UserControl>
