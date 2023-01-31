@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shelter"
         mc:Ignorable="d"
-        Title="CatsProperties" Height="555" Width="500">
+        Title="CatsProperties" MinHeight="555" MinWidth="500" MaxHeight="755" MaxWidth="700">
     <Grid>
         <StackPanel>
             <StackPanel Orientation="Horizontal" Margin="50 50 50 20">
@@ -15,10 +15,6 @@
             <StackPanel Orientation="Horizontal" Margin="50 50 50 20">
                 <TextBlock Height="25" Width="100" Name="Breed"/>
                 <TextBox Height="25" Width="200" Text="{Binding catBreed, Mode=TwoWay}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="50 50 50 20">
-                <TextBlock Height="25" Width="100" Name="Age"/>
-                <TextBox Height="25" Width="200" Text="{Binding catAge, Mode=TwoWay}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="50 50 50 20">
                 <TextBlock Height="25" Width="100" Name="DominateColor"/>

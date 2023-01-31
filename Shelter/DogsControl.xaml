@@ -14,11 +14,11 @@
         <Label Content="Size:" HorizontalAlignment="Left" Margin="50,200,0,0" Foreground="#E0FFFF" FontSize="20"/>
         <Label Content="ID:" HorizontalAlignment="Left" Margin="11,325,0,-75" Foreground="#E0FFFF" FontSize="20"/>
 
-        <TextBox x:Name="dogName_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,10,0,415" TextWrapping="Wrap"/>
-        <TextBox x:Name="dogBreed_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,50,0,375" TextWrapping="Wrap"/>
-        <TextBox x:Name="dogDominateColor_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,100,0,325" TextWrapping="Wrap"/>
-        <TextBox x:Name="dogSize_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,150,0,275" TextWrapping="Wrap"/>
-        <TextBox x:Name="dogSearch_txt" HorizontalAlignment="Left" Width="150" Height="25" Margin="117,275,0,150" TextWrapping="Wrap"/>
+        <TextBox x:Name="dogName_txt" Text="{Binding dogName, Mode=TwoWay}" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,10,0,415" TextWrapping="Wrap"/>
+        <TextBox x:Name="dogBreed_txt" Text="{Binding dogBreed, Mode=TwoWay}" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,50,0,375" TextWrapping="Wrap"/>
+        <TextBox x:Name="dogDominateColor_txt" Text="{Binding dogDominateColor, Mode=TwoWay}" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,100,0,325" TextWrapping="Wrap"/>
+        <TextBox x:Name="dogSize_txt" Text="{Binding dogSize, Mode=TwoWay}" HorizontalAlignment="Left" Width="150" Height="25" Margin="225,150,0,275" TextWrapping="Wrap"/>
+        <TextBox x:Name="dogSearch_txt" Text="{Binding dogSearch, Mode=TwoWay}" HorizontalAlignment="Left" Width="150" Height="25" Margin="117,275,0,150" TextWrapping="Wrap"/>
 
         <DataGrid x:Name="dogDatagrid" HorizontalAlignment="Right" Height="250" VerticalAlignment="Top" Width="298" Margin="0,50,50,0"/>
 

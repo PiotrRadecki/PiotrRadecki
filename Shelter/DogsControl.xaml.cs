@@ -25,6 +25,7 @@ namespace Shelter
         public DogsControl()
         {
             InitializeComponent();
+            LoadGrid();
         }
 
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-FHKBTLQ;Initial Catalog=Pets;Integrated Security=True");
@@ -40,7 +41,7 @@ namespace Shelter
 
         public void LoadGrid()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Dogs", con);
+            SqlCommand cmd = new SqlCommand("GETDATADogs", con);
             DataTable dt = new DataTable();
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -85,13 +86,12 @@ namespace Shelter
             {
                 if (isValid())
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Dogs VALUES (@Name, @Breed, @DominateColor, @SizeCategory)");
-                    cmd.Connection = con;
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@Name", dogName_txt.Text);
-                    cmd.Parameters.AddWithValue("@Breed", dogBreed_txt.Text);
-                    cmd.Parameters.AddWithValue("@DominateColor", dogDominateColor_txt.Text);
-                    cmd.Parameters.AddWithValue("@SizeCategory", dogSize_txt.Text);
+                    SqlCommand cmd = new SqlCommand("INSERTDATADog", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@Name", SqlDbType.NChar, 20).Value = dogName_txt.Text.ToString();
+                    cmd.Parameters.Add("@Breed", SqlDbType.NChar, 50).Value = dogBreed_txt.Text.ToString();
+                    cmd.Parameters.Add("@DominateColor", SqlDbType.NChar, 50).Value = dogDominateColor_txt.Text.ToString();
+                    cmd.Parameters.Add("@SizeCategory", SqlDbType.NChar, 20).Value = dogSize_txt.Text.ToString();
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
