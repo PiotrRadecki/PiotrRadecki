@@ -9,9 +9,8 @@
         Height="750"
         Width="900"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="None"
-        AllowsTransparency="True"
-        Background="Transparent">
+        Background="Transparent"
+        ResizeMode="CanResize">
     
     <Grid>
 
