@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using static Shelter.CatsControl;
 
 namespace Shelter
@@ -99,7 +87,7 @@ namespace Shelter
         private void catEditBtn_Click(object sender, RoutedEventArgs e)
         {
             CatsControl.Globals.con.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Cats set Name = '" + cat_Name.Text + "', Breed = '" + cat_Breed.Text + "', DominateColor = '" + cat_DominateColor + "', SizeCategory = '" + cat_Size + "' WHERE ID = '" + cat_Id + "' ", CatsControl.Globals.con);
+            SqlCommand cmd = new SqlCommand("UPDATE Cats set Name = '" + cat_Name.Text + "', Breed = '" + cat_Breed.Text + "', DominateColor = '" + cat_DominateColor.Text + "', SizeCategory = '" + cat_Size.Text + "' WHERE ID = '" + cat_Id.Text + "' ", CatsControl.Globals.con);
             try
             {
                 cmd.ExecuteNonQuery();
@@ -118,6 +106,8 @@ namespace Shelter
                 CatsControl catsControl = new CatsControl();
                 catsControl.LoadGrid();
                 CatsControl.Globals.con.Close();
+                IsPressedOk = false;
+                this.Close();
             }
         }
     }
