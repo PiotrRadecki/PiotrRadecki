@@ -14,15 +14,17 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Globalization;
 
 namespace Shelter
 {
     /// <summary>
-    /// Logika interakcji dla klasy CatsControl.xaml
+    /// Logika interakcji dla klasy CatsControl.xaml, INotifyPropertyChanged
     /// </summary>
     public partial class CatsControl : UserControl
     {
-        List<Cats> listOfCats = new List<Cats>();
 
 
         public CatsControl()
@@ -31,16 +33,29 @@ namespace Shelter
             LoadGrid();
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-FHKBTLQ;Initial Catalog=Pets;Integrated Security=True");
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public static class Globals
+        {
+            public static SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-FHKBTLQ;Initial Catalog=Pets;Integrated Security=True");
+        }
+           
 
         public void LoadGrid()
         {
-            SqlCommand cmd = new SqlCommand("GETDATA", con);
-            DataTable dt = new DataTable();
-            con.Open();
+            //"GETDATA"
+            SqlCommand cmd = new SqlCommand("select * from Cats", Globals.con);
+            Globals.con.Open();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable("Cats");
+            dataAdapter.Fill(dt);
             SqlDataReader sdr = cmd.ExecuteReader();
             dt.Load(sdr);
-            con.Close();
+            Globals.con.Close();
             catDataGrid.ItemsSource = dt.DefaultView;
         }
         public void catInsertBtn_Click(object sender, RoutedEventArgs e)
@@ -49,32 +64,35 @@ namespace Shelter
             Cats cats = new Cats();
             catsProperties.DataContext = cats;
             catsProperties.ShowDialog();
-            if (catsProperties.IsPressedOk) {
-                listOfCats.Add(cats);
-                try
-                {
-                        SqlCommand cmd = new SqlCommand("INSERTDATA", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add("@Name", SqlDbType.NChar, 20).Value = cats.catName;
-                    cmd.Parameters.Add("@Breed", SqlDbType.NChar, 50).Value = cats.catBreed;
-                    cmd.Parameters.Add("@DominateColor", SqlDbType.NChar, 50).Value = cats.catDominateColor;
-                    cmd.Parameters.Add("@SizeCategory", SqlDbType.NChar, 20).Value = cats.catSize;
-                    con.Open();
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                        LoadGrid();
-                        MessageBox.Show("Succesfully registered", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                catDataGrid.Items.Refresh();
-
-
-            }
-
         }
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public void catDataGrid_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            CatsProperties catsProperties = new CatsProperties();
+            DataGrid dg = sender as DataGrid;
+            DataRowView dr = dg.SelectedItem as DataRowView;
+            if (dr != null)
+            {
+                catsProperties.cat_Id.Text = dr["ID"].ToString();
+                catsProperties.cat_Name.Text = dr["Name"].ToString();
+                catsProperties.cat_Breed.Text = dr["Breed"].ToString();
+                catsProperties.cat_DominateColor.Text = dr["DominateColor"].ToString();
+                catsProperties.cat_Size.Text = dr["SizeCategory"].ToString();
+            }
+        }
+
+    }
         // private void catDeleteBtn_Click(object sender, RoutedEventArgs e)
         // {
 
@@ -112,5 +130,5 @@ namespace Shelter
         //        con.Close();
         //    }
         //}
-    }
 }
+

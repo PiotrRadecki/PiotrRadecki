@@ -5,27 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shelter"
         mc:Ignorable="d"
-        Title="CatsProperties" MinHeight="555" MinWidth="500" MaxHeight="755" MaxWidth="700">
+        Title="CatsProperties" MinHeight="595" MinWidth="500" MaxHeight="755" MaxWidth="700">
     <Grid>
         <StackPanel>
             <StackPanel Orientation="Horizontal" Margin="50 50 50 20">
-            <TextBlock Height="25" Width="100" Name="Name"/>
-            <TextBox Height="25" Width="200" Text="{Binding catName, Mode=TwoWay}"/>
+            <TextBlock Height="25" Width="100" Text="Id"/>
+            <TextBox x:Name="cat_Id" Height="25" Width="200"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="50 50 50 20">
-                <TextBlock Height="25" Width="100" Name="Breed"/>
-                <TextBox Height="25" Width="200" Text="{Binding catBreed, Mode=TwoWay}"/>
+                <TextBlock Height="25" Width="100" Text="Name"/>
+                <TextBox x:Name="cat_Name" Height="25" Width="200"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="50 50 50 20">
-                <TextBlock Height="25" Width="100" Name="DominateColor"/>
-                <TextBox Height="25" Width="200" Text="{Binding catDominateColor, Mode=TwoWay}"/>
+                <TextBlock Height="25" Width="100" Text="Breed"/>
+                <TextBox x:Name="cat_Breed" Height="25" Width="200"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="50 50 50 20">
-                <TextBlock Height="25" Width="100" Name="Size"/>
-                <TextBox Height="25" Width="200" Text="{Binding catSize, Mode=TwoWay}"/>
+                <TextBlock Height="25" Width="100" Text="Dominate Color"/>
+                <TextBox x:Name="cat_DominateColor" Height="25" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="50 50 50 20">
+                <TextBlock Height="25" Width="100" Text="Size"/>
+                <TextBox x:Name="cat_Size" Height="25" Width="200"/>
             </StackPanel>
 
-            <Button Content="Ok" Name="catOkBtn" Click="catOkBtn_Click"/>
+            <Button Content="Add" Name="catAddBtn" Click="catAddBtn_Click"/>
+            <Button Content="Edit" Name="catEditBtn" Click="catEditBtn_Click"/>
             <Button Content="Close" Name="catCloseBtn" Click="catCloseBtn_Click"/>
         </StackPanel>
     </Grid>
