@@ -19,11 +19,11 @@
         </Grid.ColumnDefinitions>
         <DataGrid x:Name="catDataGrid" Width="auto" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="50 0 50 0" AutoGenerateColumns="False" SelectionChanged="catDataGrid_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding catId}" Header="Id" Width="*"/>
-                <DataGridTextColumn Binding="{Binding catName}" Header="Name" Width="*"/>
-                <DataGridTextColumn Binding="{Binding catBreed}" Header="Breed" Width="*"/>
-                <DataGridTextColumn Binding="{Binding catDominateColor}" Header="Dominate Color" Width="*"/>
-                <DataGridTextColumn Binding="{Binding catSize}" Header="Size" Width="*"/>
+                <DataGridTextColumn Binding="{Binding ID}" Header="Id" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Breed}" Header="Breed" Width="*"/>
+                <DataGridTextColumn Binding="{Binding DominateColor}" Header="Dominate Color" Width="*"/>
+                <DataGridTextColumn Binding="{Binding SizeCategory}" Header="Size" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="catInsertBtn" Grid.Row="3" Grid.Column="1" Content="Insert" Click="catInsertBtn_Click" Margin="0 20 0 20"/>

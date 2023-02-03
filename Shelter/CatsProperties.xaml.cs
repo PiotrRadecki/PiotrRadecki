@@ -74,9 +74,9 @@ namespace Shelter
                     cmd.ExecuteNonQuery();
                     CatsControl.Globals.con.Close();
                     CatsControl catsControl = new CatsControl();
-                    catsControl.LoadGrid();
                     MessageBox.Show("Succesfully registered", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
                     catsControl.catDataGrid.Items.Refresh();
+                    catsControl.LoadGrid();
                 }
             }
                 catch (SqlException ex)
