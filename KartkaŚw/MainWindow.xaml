@@ -1,0 +1,87 @@
+﻿<Window x:Class="KartkaŚw.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KartkaŚw"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="550">
+    <Grid Background="Red">
+        <Canvas>
+
+            <Rectangle Style="{StaticResource Trunk}"
+                Canvas.Left="225"
+                Canvas.Top="600" />
+
+            <Path Style="{StaticResource Tree}"
+                  Margin="100 100 100 0"
+                Data="M 150 50 L 250 200 50 200 Z"/>
+
+            <Path Style="{StaticResource Tree}"
+                Margin="95 200 100 0"
+                Data="M 150 50 L 300 200 10 200 Z" />
+
+            <Path Style="{StaticResource Tree}"
+                Margin="100 290 100 0"
+                Data="M 150 50 L 350 200 -50 200 Z" />
+
+            <Path Style="{StaticResource Tree}"
+                Margin="100 390 0 0"
+                Data="M 140 50 L 400 200 -80 200 Z" />
+
+            <Ellipse Style="{StaticResource Bauble}"
+                Canvas.Left="300"
+                Canvas.Top="500" />
+
+            <Ellipse Style="{StaticResource Bauble}"
+                Canvas.Left="270"
+                Canvas.Top="350" />
+
+            <Ellipse Style="{StaticResource Bauble}"
+                Canvas.Left="100"
+                Canvas.Top="520" />
+
+            <Ellipse Style="{StaticResource Bauble}"
+                Canvas.Left="250"
+                Canvas.Top="220" />
+
+            <Ellipse Style="{StaticResource Bauble}"
+                Canvas.Left="170"
+                Canvas.Top="320" />
+
+            <Ellipse Style="{StaticResource Bauble}"
+                Canvas.Left="180"
+                Canvas.Top="440" />
+
+            <Path Style="{StaticResource Star}" 
+                Data="M 127,37 L 104,105 L 34,105 L 91,150 L 69,218 L 127,176 L 187,218 L 164,150 L 223,105 L 151,105 L 127,37" 
+                Canvas.Left="120" 
+                Canvas.Top="-40">
+            </Path>
+
+            <Rectangle Style="{StaticResource Gift1}"
+                Canvas.Left="30"
+                Canvas.Top="650" />
+
+            <Rectangle Style="{StaticResource GiftClose}"
+                Canvas.Left="75"
+                Canvas.Top="650" />
+
+            <Rectangle Style="{StaticResource Gift2}"
+                Canvas.Left="430"
+                Canvas.Top="650" />
+
+            <Rectangle Style="{StaticResource GiftClose}"
+                Canvas.Left="475"
+                Canvas.Top="650" />
+
+            <Rectangle Style="{StaticResource Gift3}"
+                Canvas.Left="280"
+                Canvas.Top="670" />
+
+            <Rectangle Style="{StaticResource GiftClose}"
+                Canvas.Left="325"
+                Canvas.Top="670" />
+        </Canvas>
+    </Grid>
+</Window>
